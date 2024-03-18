@@ -20,7 +20,7 @@ type GLTFResult = GLTF & {
 
 export function FrontSleeves(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF(
-    "src/assets/3dmodels/front+sleeves.gltf"
+    "/3dmodels/front+sleeves.gltf"
   ) as GLTFResult;
   const snap = useSnapshot(state);
   const uvTextture = new THREE.TextureLoader().load(snap.logoDecal);
@@ -130,4 +130,4 @@ export function FrontSleeves(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload("src/assets/3dmodels/front+sleeves.gltf");
+useGLTF.preload("/3dmodels/front+sleeves.gltf");
