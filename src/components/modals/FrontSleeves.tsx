@@ -5,6 +5,7 @@ import { GLTF } from "three-stdlib";
 import { useSnapshot } from "valtio";
 import state from "../../store";
 import { useControls } from "leva";
+// import { scale } from "maath/dist/declarations/src/vector2";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -26,7 +27,28 @@ export function FrontSleeves(props: JSX.IntrinsicElements["group"]) {
   const ref: any = useRef();
   const [hover, setHover] = useState(null);
   const logoTexture = useTexture(snap.logoDecal);
-useControls
+  const decal: any = useRef();
+  // useControls({
+  //   angle: {
+  //     min: 0,
+
+  //     max: Math.PI * 2,
+  //     value: 0,
+  //     step: 0.01,
+  //     onChange: (value: any) => {
+  //       decal.current.rotation.y = value;
+  //     },
+  //   },
+  //   scale: {
+  //     min: 1,
+  //     value: 0,
+  //     onChange: (value: any) => {
+  //       decal.current.scale.x = value;
+  //       decal.current.scale.y = value;
+  //       decal.current.scale.z = value;
+  //     },
+  //   },
+  // });
   const stateString = JSON.stringify(snap);
   return (
     <group
@@ -53,25 +75,22 @@ useControls
         scale={0.039}
         dispose={null}
       >
-        {/* <sphereGeometry /> */}
-        {/* <meshBasicMaterial transparent opacity={0} /> */}
-
-        <Decal
-          debug // Makes "bounding box" of the decal visible
-          position={[0, 154, 0]} // Position of the decal
-          rotation={[0, 0, 0]} // Rotation of the decal (can be a vector or a degree in radians)
-          scale={1000} // Scale of the decal
-        >
-          {/* <ambientLight intensity={20} /> */}
-          <meshBasicMaterial
-            transparent
-            map={logoTexture}
-            polygonOffset
-            polygonOffsetFactor={-1} // The material should take precedence over the original
-          />
-        </Decal>
-        {/* {snap.isLogoTexture && (
-        )} */}
+        {snap.isLogoTexture && (
+          <Decal
+            // ref={decal}
+            // debug // Makes "bounding box" of the decal visible
+            position={[0, 120, -150]} // Position of the decal[x,z,y]
+            rotation={3.15} // Rotation of the decal (can be a vector or a degree in radians)
+            scale={180} // Scale of the decal[x,z,y]
+          >
+            <meshBasicMaterial
+              transparent
+              map={logoTexture}
+              polygonOffset
+              polygonOffsetFactor={-1} // The material should take precedence over the original
+            />
+          </Decal>
+        )}
       </mesh>
       <mesh
         material-color={`${snap.item.sleves_L_R}`}
@@ -84,7 +103,7 @@ useControls
         // dispose={null}
         // map={uvTextture}
       >
-         {/* <Decal
+        {/* <Decal
           debug // Makes "bounding box" of the decal visible
           position={[0, 214, 0]} // Position of the decal
           rotation={[0, 0, 0]} // Rotation of the decal (can be a vector or a degree in radians)
@@ -97,7 +116,7 @@ useControls
             polygonOffsetFactor={-1} // The material should take precedence over the original
           />
         </Decal> */}
-        
+
         {/* {snap.isLogoTexture && (
           <Decal
             position={[0, 0.04, 0.15]}

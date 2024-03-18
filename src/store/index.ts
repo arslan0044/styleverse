@@ -7,12 +7,12 @@ const state = proxy({
   item: {
     Rib_2X2_468gsm_FRONT_1962: "#808080",
     Knit_Cotton_Jersey_FRONT_1950: "#FF0080",
-    front_main: "#FF0080",
+    front_main: "#FFF",
     sleves_L_R: "#EFBD48",
   },
 
   isLogoTexture: true,
-  logoDecal: "src/assets/car2.png",
+  logoDecal: "src/assets/pattrerns.png",
 });
 
 export default state;

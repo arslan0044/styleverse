@@ -25,7 +25,7 @@ function Color() {
   return (
     <div className="h-screen bg-red-200 ">
       <HexColorPicker
-        color={snap.color}
+        color={"#fff"}
         onChange={(color) => (state.item[snap.current] = color)}
       />
       <div className=" py-9 grid grid-cols-5 gap-6">
