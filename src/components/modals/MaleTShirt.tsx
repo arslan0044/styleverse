@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import React, { useRef, useState } from "react";
-import { useGLTF } from "@react-three/drei";
+import { Decal, useGLTF, useTexture } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { useSnapshot } from "valtio";
 import state from "../../store";
@@ -40,6 +40,7 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
 
   const snap = useSnapshot(state);
   const stateString = JSON.stringify(snap);
+  // const logoTexture = useTexture(snap.logoDecal)
   return (
     <group {...props} dispose={null} key={stateString}>
       <group
@@ -129,6 +130,7 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
           geometry={nodes.Object_16.geometry}
           material={materials.Rib_2X2_468gsm_FRONT_1962}
         />
+        
       </group>
     </group>
   );

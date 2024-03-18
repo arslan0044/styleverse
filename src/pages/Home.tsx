@@ -5,6 +5,7 @@ import Color from "../components/Color";
 import { useSnapshot } from "valtio";
 import state from "../store";
 import Modals from "../components/Modals";
+import Patterns from "../components/Patterns";
 function Home() {
   const snap = useSnapshot(state)
 
@@ -16,9 +17,9 @@ function Home() {
           <button onClick={(e) => setComponent(<Design />)}>Design</button>
           <button onClick={(e) => setComponent(<Color />)}>Color</button>
           <button
-            onClick={(e) => setComponent(<h1 className="text-5xl uppercase">patterns</h1>)}
+            onClick={(e) => setComponent(<Patterns/>)}
           >
-            Pattron
+            patterns
           </button>
           <button
             onClick={(e) => setComponent(<h1 className="text-5xl">Element</h1>)}

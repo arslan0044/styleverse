@@ -1,15 +1,18 @@
-import React from 'react'
-import Home from "./pages/Home"
+import React from "react";
+import Home from "./pages/Home";
+import Canvas from "./components/Canvas";
 function App() {
   return (
-    <><Home/>
+    <>
+      <Home />
+      <div className=" w-[100vh] h-[100vh] mx-auto flex justify-center items-center">
+        <Canvas width={700} height={500} />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
-
-
+export default App;
 
 // import { useRef, useState, useEffect } from "react"
 // import { Canvas, useFrame } from "@react-three/fiber"
