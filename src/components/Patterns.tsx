@@ -4,10 +4,11 @@ import { useSnapshot } from "valtio";
 export default function Patterns() {
   const snap = useSnapshot(state);
   const images = [
-    "src/assets/pattrerns.png",
-    "src/assets/car.png",
-    "src/assets/car2.png",
-    "src/assets/pkoimon.png",
+    "/assets/pattrerns.png",
+    // "/assets/car.png",
+    "/assets/car2.png",
+    "/assets/pkoimon.png",
+    "/assets/hacker.png",
   ];
   return (
     <div className="w-full h-full bg-yellow-200">

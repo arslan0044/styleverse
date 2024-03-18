@@ -12,7 +12,7 @@ const state = proxy({
   },
 
   isLogoTexture: true,
-  logoDecal: "src/assets/pattrerns.png",
+  logoDecal: "/assets/pkoimon.png",
 });
 
 export default state;

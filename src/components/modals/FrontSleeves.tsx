@@ -20,7 +20,7 @@ type GLTFResult = GLTF & {
 
 export function FrontSleeves(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF(
-    "/3dmodels/front+sleeves.gltf"
+    "/assets/3dmodels/front+sleeves.gltf"
   ) as GLTFResult;
   const snap = useSnapshot(state);
   const uvTextture = new THREE.TextureLoader().load(snap.logoDecal);
@@ -79,7 +79,7 @@ export function FrontSleeves(props: JSX.IntrinsicElements["group"]) {
           <Decal
             // ref={decal}
             // debug // Makes "bounding box" of the decal visible
-            position={[0, 120, -150]} // Position of the decal[x,z,y]
+            position={[0, 120, -140            ]} // Position of the decal[x,z,y]
             rotation={3.15} // Rotation of the decal (can be a vector or a degree in radians)
             scale={180} // Scale of the decal[x,z,y]
           >
@@ -130,4 +130,4 @@ export function FrontSleeves(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload("/3dmodels/front+sleeves.gltf");
+useGLTF.preload("/assets/3dmodels/front+sleeves.gltf");

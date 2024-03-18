@@ -33,7 +33,7 @@ type GLTFResult = GLTF & {
 
 export function Model(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF(
-    "/3dmodels/male_tshirt.glb"
+    "/assets/3dmodels/male_tshirt.glb"
   ) as GLTFResult;
   const ref = useRef();
   const [hover, setHover] = useState(null);
@@ -136,4 +136,4 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload("/3dmodels/male_tshirt.glb");
+useGLTF.preload("/assets/3dmodels/male_tshirt.glb");
