@@ -6,6 +6,7 @@ import { useSnapshot } from "valtio";
 import state from "../store";
 import Modals from "../components/Modals";
 import Patterns from "../components/Patterns";
+import Elements from "../components/Elements";
 function Home() {
   const snap = useSnapshot(state)
 
@@ -22,7 +23,7 @@ function Home() {
             patterns
           </button>
           <button
-            onClick={(e) => setComponent(<h1 className="text-5xl">Element</h1>)}
+            onClick={(e) => setComponent(<Elements/>)}
           >
             Element
           </button>

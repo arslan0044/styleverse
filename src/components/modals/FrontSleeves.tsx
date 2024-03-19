@@ -5,6 +5,8 @@ import { GLTF } from "three-stdlib";
 import { useSnapshot } from "valtio";
 import state from "../../store";
 import { useControls } from "leva";
+import { useOnDraw } from "../../hooks";
+import { degToRad } from "three/src/math/MathUtils";
 // import { scale } from "maath/dist/declarations/src/vector2";
 
 type GLTFResult = GLTF & {
@@ -23,32 +25,25 @@ export function FrontSleeves(props: JSX.IntrinsicElements["group"]) {
     "/assets/3dmodels/front+sleeves.gltf"
   ) as GLTFResult;
   const snap = useSnapshot(state);
-  const uvTextture = new THREE.TextureLoader().load(snap.logoDecal);
   const ref: any = useRef();
   const [hover, setHover] = useState(null);
   const logoTexture = useTexture(snap.logoDecal);
-  const decal: any = useRef();
-  // useControls({
-  //   angle: {
-  //     min: 0,
-
-  //     max: Math.PI * 2,
-  //     value: 0,
-  //     step: 0.01,
-  //     onChange: (value: any) => {
-  //       decal.current.rotation.y = value;
-  //     },
-  //   },
-  //   scale: {
-  //     min: 1,
-  //     value: 0,
-  //     onChange: (value: any) => {
-  //       decal.current.scale.x = value;
-  //       decal.current.scale.y = value;
-  //       decal.current.scale.z = value;
-  //     },
-  //   },
-  // });
+  const PATTERNSTexture = useTexture(snap.PATTERNSDecal);
+  // const decal: any = useRef();
+  // const snap = useSnapshot(state);
+  const { setCanvasRef, onCanvasMouseDown } = useOnDraw(onDraw);
+  function onDraw(ctx: any, point: any, prevPoint: any) {
+    drawLine(prevPoint, point, ctx, "#ff0000", 2);
+  }
+  function drawLine(start: any, end: any, ctx: any, color: any, width: any) {
+    start = start ?? end;
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.strokeStyle = color;
+    ctx.moveTo(start.x, start.y);
+    ctx.lineTo(end.x, end.y);
+    ctx.stroke();
+  }
   const stateString = JSON.stringify(snap);
   return (
     <group
@@ -79,8 +74,8 @@ export function FrontSleeves(props: JSX.IntrinsicElements["group"]) {
           <Decal
             // ref={decal}
             // debug // Makes "bounding box" of the decal visible
-            position={[0, 120, -140            ]} // Position of the decal[x,z,y]
-            rotation={3.15} // Rotation of the decal (can be a vector or a degree in radians)
+            position={[0, 120, -140]} // Position of the decal[x,z,y]
+            rotation={degToRad(180)} // Rotation of the decal (can be a vector or a degree in radians)
             scale={180} // Scale of the decal[x,z,y]
           >
             <meshBasicMaterial
@@ -91,6 +86,24 @@ export function FrontSleeves(props: JSX.IntrinsicElements["group"]) {
             />
           </Decal>
         )}
+
+        {snap.isPATTERNSTexture && (
+          <Decal
+            // ref={decal}
+            // debug // Makes "bounding box" of the decal visible
+            position={[0, 120, -140]} // Position of the decal[x,z,y]
+            rotation={degToRad(180)} // Rotation of the decal (can be a vector or a degree in radians)
+            scale={1000} // Scale of the decal[x,z,y]
+          >
+            <meshBasicMaterial
+              transparent
+              map={PATTERNSTexture}
+              polygonOffset
+              polygonOffsetFactor={-1} // The material should take precedence over the original
+            />
+          </Decal>
+        )}
+       
       </mesh>
       <mesh
         material-color={`${snap.item.sleves_L_R}`}
@@ -102,30 +115,14 @@ export function FrontSleeves(props: JSX.IntrinsicElements["group"]) {
         scale={0.039}
         // dispose={null}
         // map={uvTextture}
-      >
-        {/* <Decal
-          debug // Makes "bounding box" of the decal visible
-          position={[0, 214, 0]} // Position of the decal
-          rotation={[0, 0, 0]} // Rotation of the decal (can be a vector or a degree in radians)
-          scale={100} // Scale of the decal
-        >
-          <ambientLight intensity={20} />
-            transparent
-            map={logoTexture}
-            polygonOffset
-            polygonOffsetFactor={-1} // The material should take precedence over the original
-          />
-        </Decal> */}
-
-        {/* {snap.isLogoTexture && (
-          <Decal
-            position={[0, 0.04, 0.15]}
-            rotation={[0, 0, 0]}
-            scale={1}
-            map={uvTextture}
-          />
-        )} */}
-      </mesh>
+      />
+        {/* <canvas
+     width={window.innerWidth}
+     height={window.innerHeight}
+      className="border border-black"
+      ref={setCanvasRef}
+      onMouseDown={onCanvasMouseDown}
+    /> */}
     </group>
   );
 }

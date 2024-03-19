@@ -11,8 +11,10 @@ const state = proxy({
     sleves_L_R: "#EFBD48",
   },
 
-  isLogoTexture: true,
+  isLogoTexture: false,
   logoDecal: "/assets/pkoimon.png",
+  isPATTERNSTexture: false,
+  PATTERNSDecal: "/assets/pattrerns.png",
 });
 
 export default state;
