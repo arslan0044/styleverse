@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import React, { useRef, useState } from "react";
-import { Decal, useGLTF, useTexture } from "@react-three/drei";
+import { Decal, Text, useGLTF, useTexture } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { useSnapshot } from "valtio";
 import state from "../../store";
@@ -103,7 +103,7 @@ export function FrontSleeves(props: JSX.IntrinsicElements["group"]) {
             />
           </Decal>
         )}
-       
+        
       </mesh>
       <mesh
         material-color={`${snap.item.sleves_L_R}`}
@@ -116,7 +116,7 @@ export function FrontSleeves(props: JSX.IntrinsicElements["group"]) {
         // dispose={null}
         // map={uvTextture}
       />
-        {/* <canvas
+      {/* <canvas
      width={window.innerWidth}
      height={window.innerHeight}
       className="border border-black"

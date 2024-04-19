@@ -10,46 +10,24 @@ import Elements from "../components/Elements";
 function Home() {
   const snap = useSnapshot(state)
 
-  const [component, setComponent] = useState(<Design />);
+  const [component, setComponent] = useState(<></>);
   return (
     <div className="mx-0 my-0 py-0 px-0  flex flex-row w-full ">
-      <div className=" w-[10%]  h-screen bg-green-500">
+      <div className=" w-[10%]  bg-green-500 h-[50vh] items-center my-auto">
         <div className=" flex flex-col items-center justify-center">
           <button onClick={(e) => setComponent(<Design />)}>Design</button>
           <button onClick={(e) => setComponent(<Color />)}>Color</button>
-          <button
-            onClick={(e) => setComponent(<Patterns/>)}
-          >
-            patterns
-          </button>
-          <button
-            onClick={(e) => setComponent(<Elements/>)}
-          >
-            Element
-          </button>
-          <button
-            onClick={(e) => setComponent(<h1 className="text-5xl">Text</h1>)}
-          >
-            Text
-          </button>
-          <button
-            onClick={(e) => setComponent(<h1 className="text-5xl">Upload</h1>)}
-          >
-            Upload
-          </button>
-          <button
-            onClick={(e) =>
-              setComponent(<h1 className="text-5xl">Art Tools</h1>)
-            }
-          >
-            Art Tools
-          </button>
+          <button onClick={(e) => setComponent(<Patterns />)}>patterns</button>
+          <button onClick={(e) => setComponent(<Elements />)}>Element</button>
+          <button onClick={(e) => setComponent(<h1 className="text-5xl">Text</h1>)}>Text</button>
+          <button onClick={(e) => setComponent(<h1 className="text-5xl">Upload</h1>)}>Upload</button>
+          <button onClick={(e) => setComponent(<h1 className="text-5xl">Art Tools</h1>)}>Art Tools</button>
         </div>
       </div>
-      <div className=" w-[40%]  ">{component}</div>
+      <div className=" w-[30%] h-[80vh] my-auto items-center ">{component}</div>
       <div className=" w-[50%]  h-screen ">
         {/* {snap.design} */}
-        <Modals/>
+        <Modals />
       </div>
     </div>
   );

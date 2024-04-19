@@ -9,7 +9,7 @@ function Canvas({ width, height }: { width: number; height: number }) {
     onCanvasMouseDown
 } = useOnDraw(onDraw);
   function onDraw(ctx: any, point: any, prevPoint: any) {
-    drawLine(prevPoint, point, ctx, "#ff0000", 2);
+    drawLine(prevPoint, point, ctx, "#fff", 2);
   }
   function drawLine(start: any, end: any, ctx: any, color: any, width: any) {
     start = start ?? end;
