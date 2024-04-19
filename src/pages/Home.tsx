@@ -13,7 +13,7 @@ function Home() {
   const [component, setComponent] = useState(<Patterns />);
   return (
     <div className="mx-0 my-0 py-0 px-0  flex flex-row w-full ">
-      <div className=" w-[30%] h-[80vh] my-auto items-center ">{component}</div>
+      <div className=" w-[30%] h-[80vh] my-auto items-center bg-gradient-to-t to-[#535AC6] from-[#E76F71] rounded-2xl p-2">{component}</div>
       <div className=" w-[5%]  h-[50vh] items-center my-auto">
         <div className=" flex flex-col items-center justify-center gap-2">
           {/* <button onClick={(e) => setComponent(<Design />)}>Design</button> */}
@@ -37,7 +37,7 @@ function Home() {
           <button onClick={(e) => setComponent(<h1 className="text-8xl text-white">Art Tools</h1>)} className=" bg-yellow-300"><img src="/assets/art-painting.png" alt="" /></button>
         </div>
       </div>
-      <div className=" w-[50%]  h-screen ">
+      <div className=" w-[50%]  h-screen  ">
         {/* {snap.design} */}
         <Modals />
       </div>
