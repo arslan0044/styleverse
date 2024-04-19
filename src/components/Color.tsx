@@ -23,9 +23,10 @@ function Color() {
     "#808080",
   ];
   return (
-    <div className="h-screen bg-red-200 ">
+    <div className="h-full bg-[#2A2D5A] px-12 py-2 ">
+      <h1 className="text-xl text-white my-2 uppercase bg-[#2A2D5A] border-[#757BD5] font-extrabold leading-tight tracking-tighter flex items-center justify-center w-full border-t-2 border-b-2">Elements</h1>
       <HexColorPicker
-        color={"#fff"}
+        color={state.item[snap.current]}
         onChange={(color) => (state.item[snap.current] = color)}
       />
       <div className=" py-9 grid grid-cols-5 gap-6">
