@@ -7,12 +7,17 @@ import state from "../store";
 import Modals from "../components/Modals";
 import Patterns from "../components/Patterns";
 import Elements from "../components/Elements";
+import ObjectsParts from "../components/ObjectsParts";
 function Home() {
   const snap = useSnapshot(state)
-
+  const data = [
+    "/assets/car.png",
+    
+]
   const [component, setComponent] = useState(<Patterns />);
   return (
     <div className="mx-0 my-0 py-0 px-0  flex flex-row w-full ">
+      <div className="w-[10%] bg-pink-600 h-[50vh] my-auto"></div>
       <div className=" w-[30%] h-[80vh] my-auto items-center bg-gradient-to-t to-[#535AC6] from-[#E76F71] rounded-2xl p-2">{component}</div>
       <div className=" w-[5%]  h-[50vh] items-center my-auto">
         <div className=" flex flex-col items-center justify-center gap-2">
@@ -37,9 +42,24 @@ function Home() {
           <button onClick={(e) => setComponent(<h1 className="text-8xl text-white">Art Tools</h1>)} className=" bg-yellow-300"><img src="/assets/art-painting.png" alt="" /></button>
         </div>
       </div>
-      <div className=" w-[50%]  h-screen  ">
+      <div className=" w-[25%]  h-screen  ">
+        {/* {`snap.design`} */}
+        <ObjectsParts />
+      </div>
+      <div className=" w-[30%]  h-screen  ">
         {/* {snap.design} */}
         <Modals />
+      </div>
+      <div className="w-[5%] h-[50vh] my-auto">
+      <div className='grid grid-cols-1  gap-3'>
+                {data.map((e) => (
+
+                    <div className='rounded-full border-yellow-300 border-2   w-16 h-16 object-contain flex  items-center justify-center'                >
+                        <img src={e} alt="" />
+                    </div>
+                ))}
+
+            </div>
       </div>
     </div>
   );

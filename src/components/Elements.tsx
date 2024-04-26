@@ -6,14 +6,18 @@ export default function Patterns() {
   const images = [
     // "/assets/pattrerns.png",
     // "/assets/car.png",
-    "/assets/car2.png",
-    "/assets/pkoimon.png",
-    "/assets/hacker.png",
-    "/assets/naruto.png",
-    "/assets/Micki.png",
-    "/assets/cute-tweety.png",
-    "/assets/superman.png",
+    // "/assets/car2.png",
+    // "/assets/pkoimon.png",
+    // "/assets/hacker.png",
+    // "/assets/naruto.png",
+    // "/assets/Micki.png",
+    // "/assets/cute-tweety.png",
+    // "/assets/superman.png",
     // "https://freepngimg.com/thumb/cartoon/4-2-cartoon-transparent-thumb.png",
+    '/assets/Elements/1/1.png',
+    '/assets/Elements/1/2.png',
+    '/assets/Elements/1/3.png',
+    '/assets/Elements/1/4.png',
   ];
   return (
    
