@@ -7,8 +7,8 @@ import { Model } from "./modals/MaleTShirt";
 export default function Modals() {
   const [modal, setModal] = useState();
   return (
-    <>
-      <Canvas dpr={[1, 2]} camera={{ fov: 45 }} className=" absolute">
+    <div className="h-[85%]">
+      <Canvas dpr={[1, 2]} camera={{ fov: 45 }} className="">
         {/* <OrbitControls /> */}
         <PresentationControls
           speed={1.2}
@@ -23,6 +23,6 @@ export default function Modals() {
           </Stage>
         </PresentationControls>
       </Canvas>
-    </>
+    </div>
   );
 }

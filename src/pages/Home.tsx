@@ -12,12 +12,12 @@ function Home() {
   const snap = useSnapshot(state)
   const data = [
     "/assets/car.png",
-    
-]
+
+  ]
   const [component, setComponent] = useState(<Patterns />);
   return (
     <div className="mx-0 my-0 py-0 px-0  flex flex-row w-full ">
-      <div className="w-[10%] bg-pink-600 h-[50vh] my-auto"></div>
+      <div className="w-[10%] bg-[#E76F71] h-[50vh] my-auto"></div>
       <div className=" w-[30%] h-[80vh] my-auto items-center bg-gradient-to-t to-[#535AC6] from-[#E76F71] rounded-2xl p-2">{component}</div>
       <div className=" w-[5%]  h-[50vh] items-center my-auto">
         <div className=" flex flex-col items-center justify-center gap-2">
@@ -46,20 +46,29 @@ function Home() {
         {/* {`snap.design`} */}
         <ObjectsParts />
       </div>
-      <div className=" w-[30%]  h-screen  ">
+      <div className=" w-[30%]  h-screen flex flex-col items-center justify-center ">
         {/* {snap.design} */}
         <Modals />
+        <div className=" text-xl text-white flex justify-evenly w-full"> 
+        <div>Backword</div>
+        <div>Download</div>
+        <div>Forword</div>
+        </div>
+        <div className=" text-lg text-white flex justify-center gap-5"> 
+        <div className=" uppercase bg-[#2A2D5A] py-2 px-5 border border-[#E76F71] rounded-xl">Clear</div>
+        <div className=" uppercase bg-[#E76F71]  py-2 px-5 border rounded-xl">Add to cart</div>
+        </div>
       </div>
       <div className="w-[5%] h-[50vh] my-auto">
-      <div className='grid grid-cols-1  gap-3'>
-                {data.map((e) => (
+        <div className='grid grid-cols-1  gap-3'>
+          {data.map((e) => (
 
-                    <div className='rounded-full border-yellow-300 border-2   w-16 h-16 object-contain flex  items-center justify-center'                >
-                        <img src={e} alt="" />
-                    </div>
-                ))}
-
+            <div className='rounded-full border-yellow-300 border-2   w-16 h-16 object-contain flex  items-center justify-center'                >
+              <img src={e} alt="" />
             </div>
+          ))}
+
+        </div>
       </div>
     </div>
   );
