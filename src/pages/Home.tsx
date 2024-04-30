@@ -45,14 +45,14 @@ function Home() {
       <div className=" w-[5%]  h-[50vh] items-center my-auto">
         <div className=" flex flex-col items-center justify-center gap-2">
           {/* <button onClick={(e) => setComponent(<Design />)}>Design</button> */}
-          <button onClick={(e) => setComponent(<Patterns />)} className=" bg-red-600"> <img src="/assets/paint-brush.png" alt="" /></button>
-          <button onClick={(e) => setComponent(<Color />)} className=" bg-pink-600 p-2"><img src="/icons/patterns_icon.png" alt="" /></button>
-          <button onClick={(e) => setComponent(<Elements />)} className=" bg-blue-600 p-2"><img src="/icons/elements_icon.png" alt="" /></button>
-          <button onClick={(e) => setComponent(<h1 className="text-8xl text-white">Text</h1>)} className=" bg-green-300 w-full h-16 flex items-center justify-center" > <img src="/icons/text_icon.png" alt="" /></button>
-          <button className=" bg-green-500 w-full h-16 flex items-center justify-center" onClick={(e) => setComponent(<h1 className="text-8xl text-white">Upload</h1>)}>
+          <button onClick={(e) => setComponent(<Patterns />)} className=" bg-red-600 rounded-r-xl"> <img src="/assets/paint-brush.png" alt="" /></button>
+          <button onClick={(e) => setComponent(<Color />)} className=" bg-pink-600 p-2 rounded-r-xl"><img src="/icons/patterns_icon.png" alt="" /></button>
+          <button onClick={(e) => setComponent(<Elements />)} className=" bg-blue-600 p-2 rounded-r-xl"><img src="/icons/elements_icon.png" alt="" /></button>
+          <button onClick={(e) => setComponent(<h1 className="text-8xl text-white">Text</h1>)} className=" rounded-r-xl bg-green-300 w-full h-16 flex items-center justify-center" > <img src="/icons/text_icon.png" alt="" /></button>
+          <button className=" bg-green-500 w-full h-16 flex items-center justify-center rounded-r-xl" onClick={(e) => setComponent(<h1 className="text-8xl text-white">Upload</h1>)}>
            <img src="/icons/photo_upload_icon.png" alt="" />
           </button>
-          <button onClick={(e) => setComponent(<h1 className="text-8xl text-white">Art Tools</h1>)} className=" bg-yellow-300"><img src="/assets/art-painting.png" alt="" /></button>
+          <button onClick={(e) => setComponent(<h1 className="text-8xl text-white">Art Tools</h1>)} className=" rounded-r-xl bg-yellow-300"><img src="/assets/art-painting.png" alt="" /></button>
         </div>
       </div>
       <div className=" w-[25%]  h-screen  ">
