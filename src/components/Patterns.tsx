@@ -35,35 +35,42 @@ export default function Patterns() {
     "/assets/Patterns/29.jpg",
     "/assets/Patterns/30.jpg",
     "/assets/Patterns/31.jpg",
-    
-    
+
+
 
   ];
   return (
     <div className="w-full h-full ">
-            <h1 className="text-xl text-white uppercase bg-[#2A2D5A] border-[#757BD5] font-extrabold leading-tight tracking-tighter flex items-center justify-center w-full border-t-2 border-b-2">Patterns</h1>
+      <div className="flex flex-row w-full   rounded-full justify-between border-[#757BD5]"
+      >
+        {/* <img className="h-12 absolute" src="/imags/cross-icon.png" alt="" /> */}
+        <div className="h-110 w-[15%] flex justify-start">        <img src="/imags/cross-icon.png" alt="" />        </div>
+        <h1 className="text-xl text-white   
+         uppercase font-extrabold leading-tight tracking-tighter w-[70%] bg-[#2A2D5A]  flex items-center justify-center  border-t-2 border-b-2">Patterns</h1>
+        <div className="h-110 w-[15%] flex justify-end rounded-e-full ">        <img src="/imags/cross-icon.png" alt="" />        </div>
+      </div>
       {/* <button
         className="bg-red-300 hover:bg-red-400 duration-100"
         onClick={() => (state.isPATTERNSTexture = false)}
       >
         Delete Button
       </button> */}
-    <div className="overflow-y-auto h-[70vh] rounded-2xl   bg-[#2A2D5A]   flex items-center  flex-col pt-2 ">
+      <div className="overflow-y-auto h-[70vh] rounded-2xl   bg-[#2A2D5A]   flex items-center  flex-col pt-2 ">
 
-      <div className=" grid h-72 w-72 grid-cols-2 gap-5 items-center justify-center">
-        {images.map((e) => (
-          <div>
-            <button
-              onClick={() => (
-                (state.PATTERNSDecal = e), (state.isPATTERNSTexture = true)
-              )}
-            >
-              <img src={e} alt={e} className="transform -scale-x-100  rounded-3xl border border-yellow-300" />
-            </button>
-          </div>
-        ))}
+        <div className=" grid h-72 w-72 grid-cols-2 gap-5 items-center justify-center">
+          {images.map((e) => (
+            <div>
+              <button
+                onClick={() => (
+                  (state.PATTERNSDecal = e), (state.isPATTERNSTexture = true)
+                )}
+              >
+                <img src={e} alt={e} className="transform -scale-x-100  rounded-3xl border border-yellow-300" />
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
     </div>
   );
 }
