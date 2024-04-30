@@ -17,12 +17,17 @@ function Home() {
     '/icons/hoodie_icon.png',
     '/icons/zip_up_hoodie_icon.png',
     '/icons/headband_icon.png',
+    '/icons/pent.png',
+    '/icons/shirt.png',
   ]
   const [component, setComponent] = useState(<Patterns />);
   return (
     <div className="mx-0 my-0 py-0 px-0  flex flex-row w-full ">
-      <div className="w-[7%] h-[60vh] my-auto relative overflow-hidden flex flex-col">
-         <div className="w-32 h-[80%]  bg-[#E76F71] absolute border rounded-3xl flex justify-start flex-col gap-2 items-center">
+      <div className="w-[7%] h-[65vh] my-auto relative overflow-hidden flex flex-col">
+         <div className="w-32 h-[85%]  bg-[#E76F71] absolute border rounded-3xl flex justify-start flex-col gap-2 items-center">
+        <div className="w-6 h-12    border-l-[25px] border-l-transparent
+  border-b-[30px] border-b-yellow-400
+  border-r-[25px] border-r-transparent"></div>
          {icons.map((e)=>(
           <>
           <div className="w-16 bg-[#6C1D3E] shadow-lg shadow-[#6C1D3E] border rounded-2xl h-16 items-center justify-center flex">
@@ -30,16 +35,19 @@ function Home() {
           </div>
           </>
          ))}
+         <div className="w-6 h-12    border-l-[25px] border-l-transparent
+  border-t-[30px] border-t-yellow-400
+  border-r-[25px] border-r-transparent"></div>
         </div>
-        <div className="h-[92%] w-full flex justify-end absolute items-end  "><img className="w-fit h-fit" src="/icons/book.png" alt="" /></div>
+        <div className="h-full w-full flex justify-end absolute items-end  "><img className="w-fit h-fit" src="/icons/book.png" alt="" /></div>
         </div>
-      <div className=" w-[30%] h-[80vh] my-auto items-center bg-gradient-to-t to-[#535AC6] from-[#E76F71] rounded-2xl p-2">{component}</div>
+      <div className=" w-[30%] h-[80vh] my-auto items-center bg-gradient-to-t to-[#535AC6] from-[#E76F71] rounded-2xl py-2">{component}</div>
       <div className=" w-[5%]  h-[50vh] items-center my-auto">
         <div className=" flex flex-col items-center justify-center gap-2">
           {/* <button onClick={(e) => setComponent(<Design />)}>Design</button> */}
           <button onClick={(e) => setComponent(<Patterns />)} className=" bg-red-600"> <img src="/assets/paint-brush.png" alt="" /></button>
           <button onClick={(e) => setComponent(<Color />)} className=" bg-pink-600 p-2"><img src="/icons/patterns_icon.png" alt="" /></button>
-          <button onClick={(e) => setComponent(<Elements />)} className=" bg-blue-600 p-2"><img src="/assets/Shapes-Icons.png" alt="" /></button>
+          <button onClick={(e) => setComponent(<Elements />)} className=" bg-blue-600 p-2"><img src="/icons/elements_icon.png" alt="" /></button>
           <button onClick={(e) => setComponent(<h1 className="text-8xl text-white">Text</h1>)} className=" bg-green-300 w-full h-16 flex items-center justify-center" > <img src="/icons/text_icon.png" alt="" /></button>
           <button className=" bg-green-500 w-full h-16 flex items-center justify-center" onClick={(e) => setComponent(<h1 className="text-8xl text-white">Upload</h1>)}>
            <img src="/icons/photo_upload_icon.png" alt="" />

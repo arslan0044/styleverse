@@ -21,18 +21,26 @@ export default function Patterns() {
   ];
   return (
    
-          <div className="w-full h-full bg-yellow-200 ">
-            <h1 className="text-xl text-white uppercase bg-[#2A2D5A] border-[#757BD5] font-extrabold leading-tight tracking-tighter flex items-center justify-center w-full border-t-2 border-b-2">Elements</h1>
-      {/* <button
+    <div className="w-full h-full relative">
+    <div className="h-12 absolute w-full flex justify-between">
+      <img src="/icons/cross-icon.png" alt="" />
+      <img src="/icons/cross-icon.png" alt="" />
+            </div>
+
+      <div className=" h-fit w-wfit pt-1">
+      <h1 className="text-xl text-white   
+       uppercase font-extrabold leading-tight tracking-tighter w-[90%] mx-auto h-9 bg-[#2A2D5A]  flex items-center justify-center  border-t-2 border-b-2">Elements</h1>
+      </div> {/* <button
         className="bg-red-300 hover:bg-red-400 duration-100"
         onClick={() => (state.isPATTERNSTexture = false)}
       >
         Delete Button
       </button> */}
-    <div className="overflow-y-auto h-[80vh]  bg-[#2A2D5A]   flex items-center  flex-col pt-2 ">
+        <div className=" p-2 rounded-b-2xl  w-[90%] mx-auto bg-[#2A2D5A]">
+        <div className="overflow-y-auto h-[70vh] rounded-b-2xl w-[90%] mx-auto   bg-[#2A2D5A] flex items-center  flex-col pt-2 ">
 
-      <div className=" grid h-72 w-72 grid-cols-2 gap-5 items-center justify-center">
-        {images.map((e) => (
+          <div className=" grid h-72 w-72 grid-cols-2 gap-5 items-center justify-center">
+          {images.map((e) => (
           <div>
             <button
               onClick={() => (
@@ -43,10 +51,10 @@ export default function Patterns() {
             </button>
           </div>
         ))}
+          </div>
+        </div>
       </div>
     </div>
-    </div>
-      
-
+    
   );
 }

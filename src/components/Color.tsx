@@ -23,14 +23,24 @@ function Color() {
     "#808080",
   ];
   return (
-    <div className="h-full bg-[#2A2D5A] px-12 py-2 ">
-      <h1 className="text-xl text-white my-2 uppercase bg-[#2A2D5A] border-[#757BD5] font-extrabold leading-tight tracking-tighter flex items-center justify-center w-full border-t-2 border-b-2">Elements</h1>
-      <HexColorPicker
+    <div className="w-full h-full relative">
+    <div className="h-12 absolute w-full flex justify-between">
+      <img src="/icons/cross-icon.png" alt="" />
+      <img src="/icons/cross-icon.png" alt="" />
+            </div>
+
+      <div className=" h-fit w-wfit pt-1">
+      <h1 className="text-xl text-white   
+       uppercase font-extrabold leading-tight tracking-tighter w-[90%] mx-auto h-9 bg-[#2A2D5A]  flex items-center justify-center  border-t-2 border-b-2">Elements</h1>
+      </div>
+      <div className=" p-2 rounded-b-2xl  w-[90%] mx-auto bg-[#2A2D5A]">
+        <div className="overflow-y-auto h-[70vh] rounded-b-2xl w-[90%] mx-auto   bg-[#2A2D5A] flex items-center  flex-col pt-2 ">
+        <HexColorPicker
         color={state.item[snap.current]}
         onChange={(color) => (state.item[snap.current] = color)}
       />
-      <div className=" py-9 grid grid-cols-5 gap-6">
-      {colors.map((e) => (
+          <div className=" grid h-72 w-72 grid-cols-3 mt-5 gap-5 items-center justify-center">
+          {colors.map((e) => (
         <div  className={`w-full h-16`}
         style={{ backgroundColor: `${e}` }}>
           <button className=" w-full h-full"
@@ -38,8 +48,11 @@ function Color() {
          ></button>
         </div>
       ))}
+          </div>
+        </div>
       </div>
-      <h1>{snap.current}</h1>
+       
+      
     </div>
   );
 }
