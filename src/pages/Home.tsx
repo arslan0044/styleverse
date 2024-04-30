@@ -21,8 +21,8 @@ function Home() {
   const [component, setComponent] = useState(<Patterns />);
   return (
     <div className="mx-0 my-0 py-0 px-0  flex flex-row w-full ">
-      <div className="w-[10%] h-[60vh] my-auto relative overflow-hidden flex flex-col">
-         <div className="w-48 h-[80%]  bg-[#E76F71] absolute border rounded-3xl flex justify-start flex-col gap-2 items-center">
+      <div className="w-[7%] h-[60vh] my-auto relative overflow-hidden flex flex-col">
+         <div className="w-32 h-[80%]  bg-[#E76F71] absolute border rounded-3xl flex justify-start flex-col gap-2 items-center">
          {icons.map((e)=>(
           <>
           <div className="w-16 bg-[#6C1D3E] shadow-lg shadow-[#6C1D3E] border rounded-2xl h-16 items-center justify-center flex">
@@ -31,7 +31,7 @@ function Home() {
           </>
          ))}
         </div>
-        <div className="h-full w-full flex justify-end absolute items-end  "><img className="w-fit h-fit" src="/icons/book.png" alt="" /></div>
+        <div className="h-[92%] w-full flex justify-end absolute items-end  "><img className="w-fit h-fit" src="/icons/book.png" alt="" /></div>
         </div>
       <div className=" w-[30%] h-[80vh] my-auto items-center bg-gradient-to-t to-[#535AC6] from-[#E76F71] rounded-2xl p-2">{component}</div>
       <div className=" w-[5%]  h-[50vh] items-center my-auto">
