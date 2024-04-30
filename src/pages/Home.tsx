@@ -23,8 +23,8 @@ function Home() {
   const [component, setComponent] = useState(<Patterns />);
   return (
     <div className="mx-0 my-0 py-0 px-0  flex flex-row w-full ">
-      <div className="w-[7%] h-[65vh] my-auto relative overflow-hidden flex flex-col">
-         <div className="w-32 h-[85%]  bg-[#E76F71] absolute border rounded-3xl flex justify-start flex-col gap-2 items-center">
+      <div className="w-[7%] h-[66vh] my-auto relative overflow-hidden flex flex-col">
+         <div className="w-32 h-[83%]  bg-[#E76F71] absolute border rounded-3xl flex justify-start flex-col gap-2 items-center">
         <div className="w-6 h-12    border-l-[25px] border-l-transparent
   border-b-[30px] border-b-yellow-400
   border-r-[25px] border-r-transparent"></div>
@@ -39,7 +39,7 @@ function Home() {
   border-t-[30px] border-t-yellow-400
   border-r-[25px] border-r-transparent"></div>
         </div>
-        <div className="h-full w-full flex justify-end absolute items-end  "><img className="w-fit h-fit" src="/icons/book.png" alt="" /></div>
+        <div className="h-full w-32 flex justify-end absolute items-end  "><img className="w-fit h-fit" src="/icons/book.png" alt="" /></div>
         </div>
       <div className=" w-[30%] h-[80vh] my-auto items-center bg-gradient-to-t to-[#535AC6] from-[#E76F71] rounded-2xl py-2">{component}</div>
       <div className=" w-[5%]  h-[50vh] items-center my-auto">

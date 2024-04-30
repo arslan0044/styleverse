@@ -9,10 +9,10 @@ export default function Modals() {
   return (
     <div className="h-[85%]">
       <div className="w-[70%] mx-2 bg-[#2A2D5A] mt-4 border-[#E76F71] border-4 rounded-xl flex justify-around">
-<div className="w-16"> <img src="/icons/crop_icon.png" alt="" /></div>
-<div className="w-16"> <img src="/icons/flip_icon.png" alt="" /></div>
-<div className="w-16"> <img src="/icons/tile_icon.png" alt="" /></div>
-<div className="w-16"> <img src="/icons/duplicate_icon.png" alt="" /></div>
+        <div className="w-16"> <img src="/icons/crop_icon.png" alt="" /></div>
+        <div className="w-16"> <img src="/icons/flip_icon.png" alt="" /></div>
+        <div className="w-16"> <img src="/icons/tile_icon.png" alt="" /></div>
+        <div className="w-16"> <img src="/icons/duplicate_icon.png" alt="" /></div>
       </div>
       <Canvas dpr={[1, 2]} camera={{ fov: 45 }} className="">
         {/* <OrbitControls /> */}
